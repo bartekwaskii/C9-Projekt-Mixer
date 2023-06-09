@@ -19,7 +19,7 @@ namespace C9_Projekt_Mixer
 
         public override string Info()
         {
-            return $"DeEsser: treshold {treshold}dB, cutoff frequency {cutoffFreq}Hz, mix {mix}%";
+            return $"\nDeEsser: \ntreshold {treshold}dB, cutoff frequency {cutoffFreq}Hz, mix {mix}%";
         }
     }
 }

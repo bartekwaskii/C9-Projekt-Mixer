@@ -33,13 +33,14 @@ namespace C9_Projekt_Mixer
         {
             mute = _mute;
         }
-        public string SignalChain()
+        public string SignalChain(int _chNr)
         {
             string answ;
-            answ = input.Info();
-            if (equalizer != null) { answ += equalizer.Info(); }
-            if (effect != null) { answ += effect.Info(); }
-            answ += $"fader {fader}dB";
+            answ = $"\nChannel {_chNr}\nSignal chain:\n";
+            answ += input.Info();
+            if (equalizer != null) { answ += System.Environment.NewLine + equalizer.Info(); }
+            if (effect != null) { answ += System.Environment.NewLine + effect.Info(); }
+            answ += $"\n\nOutput: \nfader {fader}dB";
             if (mute) { answ += ", Pad is on"; }
             return answ;
         }

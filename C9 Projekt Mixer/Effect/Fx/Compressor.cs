@@ -24,7 +24,7 @@ namespace C9_Projekt_Mixer
 
         public override string Info()
         {
-            return $"Compressor: treshold {treshold}dB, ratio 1:{ratio}, makup {makeup}dB," +
+            return $"\nCompressor: \ntreshold {treshold}dB, ratio 1:{ratio}, makup {makeup}dB," +
                 $" atack {attack}ms, hold {hold}ms, release {release}ms, mix {mix}%";
         }
     }

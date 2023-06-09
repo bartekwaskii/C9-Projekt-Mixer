@@ -20,7 +20,7 @@ namespace C9_Projekt_Mixer
 
         public override string Info()
         {
-            return fx.Info() + $"\nLimiter: input {input}dB, release {release}ms, output {output}dB";
+            return fx.Info() + $"\nLimiter: \ninput {input}dB, release {release}ms, output {output}dB";
         }
     }
 }

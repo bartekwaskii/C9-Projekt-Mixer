@@ -16,7 +16,7 @@ namespace C9_Projekt_Mixer
         }
         public override string Info()
         {
-            return $"Reverb: time {time}s, mix {mix}%";
+            return $"\nReverb: \ntime {time}s, mix {mix}%";
         }
     }
 }

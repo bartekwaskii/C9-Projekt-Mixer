@@ -19,7 +19,7 @@ namespace C9_Projekt_Mixer
 
         public override string Info()
         {
-            return fx.Info() + $"\nEsser: treshold {treshold}dB, cutoff frequency {cutoffFreq}Hz, mix {mix}%";
+            return fx.Info() + $"\nEsser: \ntreshold {treshold}dB, cutoff frequency {cutoffFreq}Hz, mix {mix}%";
         }
     }
 }

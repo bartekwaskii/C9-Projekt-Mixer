@@ -19,7 +19,7 @@ namespace C9_Projekt_Mixer
 
         public override string Info()
         {
-            return $"Delay: delay {delay}s, feedback {feedback}, mix {mix}%";
+            return $"\nDelay: \ndelay {delay}s, feedback {feedback}%, mix {mix}%";
         }
 
     }

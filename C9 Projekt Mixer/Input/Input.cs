@@ -24,7 +24,7 @@ namespace C9_Projekt_Mixer
         public string Info()
         {
             string answ;
-            answ = $"Input: gain {inputGain}dB";
+            answ = $"\nInput: \ngain {inputGain}dB";
             if(pad) { answ += ", pad is on"; }
             if (lowCut) { answ += ", low cut is on"; }
             if (highCut) { answ += ", high cut is on"; }

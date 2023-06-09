@@ -21,7 +21,7 @@ namespace C9_Projekt_Mixer
 
         public override string Info()
         {
-            return $"Limiter: input {input}dB, release {release}ms, output {output}dB";
+            return $"\nLimiter: \ninput {input}dB, release {release}ms, output {output}dB";
         }
     }
 }
