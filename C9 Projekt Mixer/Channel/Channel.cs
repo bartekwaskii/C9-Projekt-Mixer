@@ -14,15 +14,12 @@ namespace C9_Projekt_Mixer
         private Equalizer equalizer;
         private Effect effect;
         private Panorama panorama;
-        private List<IInfo> infoList = new List<IInfo>();
         public Channel(bool _mute, double _fader, Input _input, Panorama _panorama)
         {
             mute = _mute;
             fader = _fader;
             input = _input;
             panorama = _panorama;
-            infoList.Add(_input);
-            infoList.Add(_panorama);
         }
         public void AddFx(Effect _effect)
         {
