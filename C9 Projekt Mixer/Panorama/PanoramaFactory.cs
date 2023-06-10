@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace C9_Projekt_Mixer
 {
-    internal class InputFactory
+    internal class PanoramaFactory
     {
-        public Input CreateInput()
+        public Panorama CreatePanorama()
         {
-            return new Input(0, false, false, false);
+            return new Panorama('C', 0);
         }
     }
 }
