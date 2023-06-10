@@ -11,7 +11,7 @@ namespace C9_Projekt_Mixer
         public Eq(double _f, double _lvl, double _q) : base(_f, _lvl, _q) { }
         public override string Info()
         {
-            return $"\nEqualizer: {frequency}Hz, level {level}dB, q {q}";
+            return $"\nEqualizer: \n{frequency}Hz, level {level}dB, Q {q}";
         }
     }
 }

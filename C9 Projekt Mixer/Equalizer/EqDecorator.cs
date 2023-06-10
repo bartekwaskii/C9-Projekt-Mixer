@@ -15,7 +15,7 @@ namespace C9_Projekt_Mixer
         }
         public override string Info()
         {
-            return eq.Info() + $"\n\t   {frequency}Hz, level {level}dB, q {q}";
+            return eq.Info() + $"\n{frequency}Hz, level {level}dB, Q {q}";
         }
     }
 }

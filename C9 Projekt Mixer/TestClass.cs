@@ -12,14 +12,14 @@ namespace C9_Projekt_Mixer
         {
             // Input test
             var in1 = new Input(12, true, true, true);
-            Console.WriteLine(in1.Info());
+            //Console.WriteLine(in1.Info());
 
             // Equalizer test
             var eq1 = new Eq(440, -2, 3);
             var eqd1 = new EqDecorator(eq1, 300, -9, 6);
             Equalizer eqd2 = new EqDecorator(eqd1, 100, -3, 2);
-            Console.WriteLine(eq1.Info());
-            Console.WriteLine(eqd2.Info());
+            //Console.WriteLine(eq1.Info());
+            //Console.WriteLine(eqd2.Info());
 
             // Effect test
             var fx1 = new Compressor(100, -13, 2, 4, 10, 50, 100);
@@ -39,20 +39,20 @@ namespace C9_Projekt_Mixer
                 fx1, fx2, fx3, fx4, fx5,
                 fxd1, fxd2, fxd3, fxd4, fxd5
             };
-            foreach (Effect _f in fxList)
-            {
-                Console.WriteLine(_f.Info());
-            }
+            //foreach (Effect _f in fxList)
+            //{
+            //    Console.WriteLine(_f.Info());
+            //}
 
             // Panorama test
             var pan1 = new Panorama('L', 20);
             var pan2 = new Panorama('L', -2);
-            Console.WriteLine(pan1.Info());
-            Console.WriteLine(pan2.Info());
+            //Console.WriteLine(pan1.Info());
+            //Console.WriteLine(pan2.Info());
 
             // channel test
             var ch1 = new Channel(false, -10, new Input(25, false, true, false), new Panorama('R', 35));
-            ch1.AddEq(eq1);
+            ch1.AddEq(eqd1);
             ch1.AddFx(fx1);
             Console.WriteLine(ch1.SignalChain(1));
         }
