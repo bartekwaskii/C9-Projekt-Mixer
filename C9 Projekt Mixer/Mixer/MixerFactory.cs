@@ -8,14 +8,6 @@ namespace C9_Projekt_Mixer
 {
     internal class MixerFactory
     {
-        public Mixer CreateMixer1()
-        {
-            return new Mixer(16);
-        }
-        public Mixer CreateMixer2(int _channels)
-        {
-            return new Mixer(_channels);
-        }
         public Mixer InitializeMixer(int _channels)
         {
             ChannelFactory chFactory = new ChannelFactory();

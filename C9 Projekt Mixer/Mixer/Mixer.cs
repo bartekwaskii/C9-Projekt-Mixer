@@ -21,6 +21,10 @@ namespace C9_Projekt_Mixer
             if (_chList.Count <= _channesNumber)
                 channelsList = _chList;
         }
+        public string SignalChain(int _channel)
+        {
+            return channelsList[_channel - 1].SignalChain(_channel);
+        }
         public void Initialize()
         {
 
@@ -36,6 +40,10 @@ namespace C9_Projekt_Mixer
         public void RemoveFx(int _channel)
         {
 
+        }
+        public void SetVolume(int _channel, double _volume)
+        {
+            channelsList[_channel - 1].SetVolume(_volume);
         }
     }
 }

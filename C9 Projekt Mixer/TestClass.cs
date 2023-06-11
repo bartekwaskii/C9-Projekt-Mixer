@@ -18,8 +18,8 @@ namespace C9_Projekt_Mixer
             var eq1 = new Eq(440, -2, 3);
             var eqd1 = new EqDecorator(eq1, 300, -9, 6);
             Equalizer eqd2 = new EqDecorator(eqd1, 100, -3, 2);
-            //Console.WriteLine(eq1.Info());
-            //Console.WriteLine(eqd2.Info());
+            /*Console.WriteLine(eq1.Info());
+            Console.WriteLine(eqd2.Info());*/
 
             // Effect test
             var fx1 = new Compressor(100, -13, 2, 4, 10, 50, 100);
@@ -39,10 +39,10 @@ namespace C9_Projekt_Mixer
                 fx1, fx2, fx3, fx4, fx5,
                 fxd1, fxd2, fxd3, fxd4, fxd5
             };
-            //foreach (Effect _f in fxList)
-            //{
-            //    Console.WriteLine(_f.Info());
-            //}
+            /*foreach (Effect _f in fxList)
+            {
+                Console.WriteLine(_f.Info());
+            }*/
 
             // Panorama test
             var pan1 = new Panorama('L', 20);
@@ -54,7 +54,17 @@ namespace C9_Projekt_Mixer
             var ch1 = new Channel(false, -10, new Input(25, false, true, false), new Panorama('R', 35));
             ch1.AddEq(eqd1);
             ch1.AddFx(fx1);
-            Console.WriteLine(ch1.SignalChain(1));
+            //Console.WriteLine(ch1.SignalChain(1));
+
+            var app = App.GetApp();
+            app.InitializeMixer(16);
+            app.SelectChannel(1);
+            app.SetVolume(-0.75);
+            app.SignalChain();
+            app.SelectChannel(2);
+            app.SignalChain();
+
+
         }
     }
 }

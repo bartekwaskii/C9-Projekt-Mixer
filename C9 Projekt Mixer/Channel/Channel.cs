@@ -44,5 +44,9 @@ namespace C9_Projekt_Mixer
             if (mute) { answ += ", Pad is on"; }
             return answ;
         }
+        public void SetVolume(double _volume)
+        {
+            fader = _volume;
+        }
     }
 }
