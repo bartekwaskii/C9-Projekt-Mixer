@@ -12,14 +12,16 @@ namespace C9_Projekt_Mixer
         private Mixer mixer;
         private int channel;
 
+        private MixerFactory mixerFactory = new MixerFactory();
+
         private App()
         {
-            throw new NotImplementedException();
+            mixer = mixerFactory.CreateMixer();
         }
         public App GetApp()
         {
             if (app == null)
-                app= new App();
+                app = new App();
             return app;
         }
 

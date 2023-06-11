@@ -8,20 +8,34 @@ namespace C9_Projekt_Mixer
 {
     internal class Mixer
     {
-        private int id, channelsNumber;
+        private int channelsNumber;
         private List<Channel> channelsList = new List<Channel>();
 
-        public Mixer(int _id, int _channelsNumber)
+        public Mixer(int _channelsNumber)
         {
-            id = _id;
             channelsNumber = _channelsNumber;
         }
-        public Mixer(int _id, int _channesNumber, List<Channel> _chList)
+        public Mixer(int _channesNumber, List<Channel> _chList)
         {
-            id = _id;
             channelsNumber = _channesNumber;
             if (_chList.Count <= _channesNumber)
                 channelsList = _chList;
+        }
+        public void Initialize()
+        {
+
+        }
+        public void AddChannel()
+        {
+
+        }
+        public void AddFx(int _channel)
+        {
+
+        }
+        public void RemoveFx(int _channel)
+        {
+
         }
     }
 }
