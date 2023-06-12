@@ -9,10 +9,12 @@ namespace C9_Projekt_Mixer
     internal class App
     {
         private static App app;
-        private Mixer mixer;
         private static int channel;
+        public Mixer mixer { get; private set; }
 
         private MixerFactory mixerFactory = new MixerFactory();
+        private EqFactory eqFactory = new EqFactory();
+        private FxFactory fxFactory = new FxFactory();
 
         private App() { }
         public static App GetApp()
@@ -57,6 +59,14 @@ namespace C9_Projekt_Mixer
         {
             mixer.SetGain(channel, _gain);
         }
+
+        // Equalizer
+        public void AddEq(double _f, double _lvl, double _q)
+        {
+            mixer.AddEq(channel, eqFactory.CreateEq(mixer, channel, _f, _lvl, _q));
+        }
+
+        // Effect
         
 
     }

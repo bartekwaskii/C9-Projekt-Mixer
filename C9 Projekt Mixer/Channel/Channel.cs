@@ -11,9 +11,11 @@ namespace C9_Projekt_Mixer
         private bool mute;
         private double fader;
         private Input input;
-        private Equalizer equalizer;
-        private Effect effect;
         private Panorama panorama;
+
+        public Equalizer equalizer { get; private set; }
+        public Effect effect { get; private set; }
+
         public Channel(bool _mute, double _fader, Input _input, Panorama _panorama)
         {
             mute = _mute;
@@ -58,6 +60,17 @@ namespace C9_Projekt_Mixer
         }
 
         // Equalizer
+        public Equalizer GetEqualizer()
+        {
+            if (equalizer == null)
+            {
+                return null;
+            }
+            else
+            {
+                return equalizer;
+            }
+        }
         public void AddEq(Equalizer _equalizer)
         {
             equalizer = _equalizer;

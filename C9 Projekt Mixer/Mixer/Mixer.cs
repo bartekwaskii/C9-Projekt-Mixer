@@ -9,14 +9,16 @@ namespace C9_Projekt_Mixer
     internal class Mixer
     {
         private int channelsNumber;
-        private List<Channel> channelsList = new List<Channel>();
+        public List<Channel> channelsList { get; private set; }
 
         public Mixer(int _channelsNumber)
         {
+            channelsList = new List<Channel>();
             channelsNumber = _channelsNumber;
         }
         public Mixer(int _channesNumber, List<Channel> _chList)
         {
+            channelsList = new List<Channel>();
             channelsNumber = _channesNumber;
             if (_chList.Count <= _channesNumber)
                 channelsList = _chList;
@@ -24,6 +26,10 @@ namespace C9_Projekt_Mixer
         public string SignalChain(int _channel)
         {
             return channelsList[_channel - 1].SignalChain(_channel);
+        }
+        public Channel GetChannel(int _channel)
+        {
+            return channelsList[_channel - 1];
         }
         /*public void Initialize()
         {
@@ -49,13 +55,21 @@ namespace C9_Projekt_Mixer
         }
 
         // Equalizer
-        public void RemoveFx(int _channel)
+        public void AddEq(int _channel, Equalizer _equalizer)
+        {
+            channelsList[_channel - 1].AddEq(_equalizer);
+        }
+        public void RemoveEq(int _channel)
         {
 
         }
 
         // Effect
         public void AddFx(int _channel)
+        {
+
+        }
+        public void RemoveFx(int _channel)
         {
 
         }

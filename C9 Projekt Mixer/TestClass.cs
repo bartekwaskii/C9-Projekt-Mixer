@@ -60,10 +60,13 @@ namespace C9_Projekt_Mixer
             app.InitializeMixer(16);
             app.SelectChannel(1);
             app.SetVolume(-0.75);
-            app.SwitchMute(true);
+            app.SwitchMute(false);
+            app.SwitchPad(true);
+            app.SetGain(25);
+            app.AddEq(400, -5, 8);
+            app.AddEq(100, -3, 2);
             app.SignalChain();
-            app.SelectChannel(2);
-            app.SignalChain();
+
             
 
 
