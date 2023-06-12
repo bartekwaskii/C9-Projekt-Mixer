@@ -10,6 +10,8 @@ namespace C9_Projekt_Mixer
 
             TestClass.Test();
 
+            Console.ReadKey();
+
         }
     }
 }

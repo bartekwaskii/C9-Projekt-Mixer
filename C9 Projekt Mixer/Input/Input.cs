@@ -17,10 +17,6 @@ namespace C9_Projekt_Mixer
             lowCut = _lowCut;
             highCut = _highCut;
         }
-        public void SetGain(double _gain)
-        {
-            inputGain = _gain;
-        }
         public string Info()
         {
             string answ;
@@ -30,5 +26,17 @@ namespace C9_Projekt_Mixer
             if (highCut) { answ += ", high cut is on"; }
             return answ;
         }
+
+        // Input control
+        public void SwitchPad(bool _pad)
+        {
+            pad = _pad;
+        }
+        public void SetGain(double _gain)
+        {
+            inputGain = _gain;
+        }
+
+
     }
 }

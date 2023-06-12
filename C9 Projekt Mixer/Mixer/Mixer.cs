@@ -25,25 +25,39 @@ namespace C9_Projekt_Mixer
         {
             return channelsList[_channel - 1].SignalChain(_channel);
         }
-        public void Initialize()
+        /*public void Initialize()
         {
 
-        }
-        public void AddChannel()
+        }*/
+        // Fader + Mute
+        public void SetVolume(int _channel, double _volume)
         {
-
+            channelsList[_channel - 1].SetVolume(_volume);
         }
-        public void AddFx(int _channel)
+        public void SwitchMute(int _channel, bool _mute)
         {
-
+            channelsList[_channel - 1].SwitchMute(_mute);
         }
+        // Input
+        public void SwitchPad(int _channel, bool _pad)
+        {
+            channelsList[_channel - 1].SwitchPad(_pad);
+        }
+        public void SetGain(int _channel, double _gain)
+        {
+            channelsList[_channel - 1].SetGain(_gain);
+        }
+
+        // Equalizer
         public void RemoveFx(int _channel)
         {
 
         }
-        public void SetVolume(int _channel, double _volume)
+
+        // Effect
+        public void AddFx(int _channel)
         {
-            channelsList[_channel - 1].SetVolume(_volume);
+
         }
     }
 }
