@@ -37,7 +37,7 @@ namespace C9_Projekt_Mixer
         public void SignalChain()
         {
             //Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(mixer.SignalChain(channel));
+            mixer.SignalChain(channel);
         }
 
         // Channel control

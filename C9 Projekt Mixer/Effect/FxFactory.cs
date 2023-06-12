@@ -8,6 +8,11 @@ namespace C9_Projekt_Mixer
 {
     internal class FxFactory
     {
+        private Effect effect;
+        public void GetFx(Mixer _mixer)
+        {
+
+        }
         public Effect CreateCompressor()
         {
             return null;

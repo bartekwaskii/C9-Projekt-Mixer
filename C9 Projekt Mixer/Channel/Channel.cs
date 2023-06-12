@@ -25,19 +25,44 @@ namespace C9_Projekt_Mixer
         }
         public string SignalChain(int _chNr)
         {
+            // cw
+            if (mute)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            Console.Write($"\nChannel {_chNr}");
+            if (mute)
+            {
+                Console.Write(" MUTED");
+            }
+            Console.WriteLine("\nSignal chain:");
+            Console.WriteLine(input.Info());
+            if (equalizer != null)
+            {
+                Console.WriteLine(equalizer.Info());
+            }
+            if (effect != null)
+            {
+                Console.WriteLine(effect.Info());
+            }
+            Console.WriteLine($"\nOutput: \nfader {fader}dB");
             Console.ForegroundColor = ConsoleColor.Gray;
+
+            // return
             string answ;
-            answ = $"\nChannel {_chNr}\nSignal chain:\n";
+            answ = $"\nChannel {_chNr}";
+            if (mute)
+            {
+                answ += " MUTED";
+            }
+            answ += "\nSignal chain:\n";
             answ += input.Info();
             if (equalizer != null) { answ += System.Environment.NewLine + equalizer.Info(); }
             if (effect != null) { answ += System.Environment.NewLine + effect.Info(); }
             answ += $"\n\nOutput: \nfader {fader}dB";
-            if (mute) 
-            { 
-                answ += "\n\nChannel is MUTED";
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
+            
             return answ;
+
         }
         // Fader + Mute
         public void SetVolume(double _volume)
