@@ -36,7 +36,6 @@ namespace C9_Projekt_Mixer
         }
         public void SignalChain()
         {
-            //Console.ForegroundColor = ConsoleColor.Green;
             mixer.SignalChain(channel);
         }
 
@@ -64,6 +63,10 @@ namespace C9_Projekt_Mixer
         public void AddEq(double _f, double _lvl, double _q)
         {
             mixer.AddEq(channel, eqFactory.CreateEq(mixer, channel, _f, _lvl, _q));
+        }
+        public void ClearEq()
+        {
+            mixer.ClearEq(channel);
         }
 
         // Effect

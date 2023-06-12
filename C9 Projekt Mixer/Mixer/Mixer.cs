@@ -59,9 +59,9 @@ namespace C9_Projekt_Mixer
         {
             channelsList[_channel - 1].AddEq(_equalizer);
         }
-        public void RemoveEq(int _channel)
+        public void ClearEq(int _channel)
         {
-
+            channelsList[_channel - 1].AddEq(null);
         }
 
         // Effect

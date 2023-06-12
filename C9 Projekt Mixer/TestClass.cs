@@ -66,9 +66,8 @@ namespace C9_Projekt_Mixer
             app.AddEq(400, -5, 8);
             app.AddEq(100, -3, 2);
             app.SignalChain();
-
-            
-
+            app.ClearEq();
+            app.SignalChain();
 
         }
     }

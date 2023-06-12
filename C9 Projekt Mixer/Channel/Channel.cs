@@ -85,17 +85,6 @@ namespace C9_Projekt_Mixer
         }
 
         // Equalizer
-        public Equalizer GetEqualizer()
-        {
-            if (equalizer == null)
-            {
-                return null;
-            }
-            else
-            {
-                return equalizer;
-            }
-        }
         public void AddEq(Equalizer _equalizer)
         {
             equalizer = _equalizer;
