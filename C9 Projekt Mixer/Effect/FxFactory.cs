@@ -9,12 +9,14 @@ namespace C9_Projekt_Mixer
     internal class FxFactory
     {
         private Effect effect;
-        public void GetFx(Mixer _mixer)
+        public void GetFx(Mixer _mixer, int _channel)
+        {
+            effect = _mixer.channelsList[_channel - 1].effect;
+        }
+        public Effect CreateCompressor(int _channel, int _mix, double _treshold, double _makeup, double _ratio,
+            int _attack, int _hold, int _release)
         {
 
-        }
-        public Effect CreateCompressor()
-        {
             return null;
         }
         public Effect CrerateDeEsser()

@@ -31,10 +31,11 @@ namespace C9_Projekt_Mixer
         {
             return channelsList[_channel - 1];
         }
-        /*public void Initialize()
+        public void Initialize()
         {
 
-        }*/
+        }
+
         // Fader + Mute
         public void SetVolume(int _channel, double _volume)
         {
@@ -65,13 +66,13 @@ namespace C9_Projekt_Mixer
         }
 
         // Effect
-        public void AddFx(int _channel)
+        public void AddFx(int _channel, Effect _effect)
         {
-
+            channelsList[_channel - 1].AddFx(_effect);
         }
-        public void RemoveFx(int _channel)
+        public void ClearFx(int _channel)
         {
-
+            channelsList[_channel - 1].AddFx(null);
         }
     }
 }

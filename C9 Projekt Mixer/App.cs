@@ -70,7 +70,31 @@ namespace C9_Projekt_Mixer
         }
 
         // Effect
-        
+        public void AddCompressor(int _channel, int _mix, double _treshold,
+            double _makeup, double _ratio, int _attack, int _hold, int _release)
+        {
 
+            //return mixer.AddFx(fxFactory.CreateCompressor());
+        }
+        public void AddDeEsser()
+        {
+
+        }
+        public void AddDelay()
+        {
+
+        }
+        public void AddLimiter()
+        {
+
+        }
+        public void AddReverb()
+        {
+
+        }
+        public void RemoveFx()
+        {
+
+        }
     }
 }
