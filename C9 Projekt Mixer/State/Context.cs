@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace C9_Projekt_Mixer
 {
-    enum FxEnum
+    internal class Context // kontekstem ma być App
     {
-        Compressor,
-        DeEsser,
-        Delay,
-        Limiter,
-        Reverb
+        private AppState currentState;
+        
     }
 }
