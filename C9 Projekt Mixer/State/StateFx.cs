@@ -8,7 +8,7 @@ namespace C9_Projekt_Mixer.State
 {
     internal class StateFx : AppState
     {
-        public StateFx(Context _context) : base(_context) { }
+        public StateFx(App _context) : base(_context) { }
         public override void Btn1()
         {
         }

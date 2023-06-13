@@ -8,10 +8,9 @@ namespace C9_Projekt_Mixer
 {
     internal class StateStart : AppState
     {
-        public StateStart(Context _context) : base(_context) { }
+        public StateStart(App _context) : base(_context) { }
         public override void Btn1()
         {
-            context.
         }
         public override void Btn2()
         {

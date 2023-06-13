@@ -9,7 +9,7 @@ namespace C9_Projekt_Mixer
     internal class App
     {
         private static App app;
-        private static Context context; 
+        private AppState state; 
         private static int channel;
         public Mixer mixer { get; private set; }
 

@@ -8,8 +8,8 @@ namespace C9_Projekt_Mixer
 {
     internal abstract class AppState
     {
-        protected Context context;
-        public AppState(Context context)
+        protected App context;
+        public AppState(App context)
         {
             context = context;
         }

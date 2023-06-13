@@ -8,7 +8,7 @@ namespace C9_Projekt_Mixer.State
 {
     internal class StateInput : AppState
     {
-        public StateInput(Context _context) : base(_context) { }
+        public StateInput(App _context) : base(_context) { }
         public override void Btn1()
         {
         }

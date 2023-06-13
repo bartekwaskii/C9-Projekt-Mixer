@@ -8,7 +8,7 @@ namespace C9_Projekt_Mixer
 {
     internal class StateEdit : AppState
     {
-        public StateEdit(Context _context) : base(_context) { }
+        public StateEdit(App _context) : base(_context) { }
         public override void Btn1()
         {
         }

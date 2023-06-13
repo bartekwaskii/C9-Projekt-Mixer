@@ -8,7 +8,7 @@ namespace C9_Projekt_Mixer
 {
     internal class StateEq : AppState
     {
-        public StateEq(Context _context) : base(_context) { }
+        public StateEq(App _context) : base(_context) { }
         public override void Btn1()
         {
         }
