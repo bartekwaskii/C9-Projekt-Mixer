@@ -9,8 +9,8 @@ namespace C9_Projekt_Mixer
     internal class App
     {
         private static App app;
-        private static AppState state; 
-        private int channel;
+        public static AppState state { get; private set; }
+        public int channel { get; private set; }
         public  Mixer mixer { get; private set; }
 
         private MixerFactory mixerFactory = new MixerFactory();
@@ -19,7 +19,7 @@ namespace C9_Projekt_Mixer
 
         private App()
         {
-            channel = 1;
+            channel = 0;
             state = new StateStart(this);
             mixer = mixerFactory.InitializeMixer(8);
         }
@@ -40,6 +40,10 @@ namespace C9_Projekt_Mixer
         public void SelectChannel(int _channelNumber)
         {
             channel = _channelNumber - 1; // !!! WAŻNE !!!
+        }
+        public void Initialize(int _)
+        {
+            mixer = mixerFactory.InitializeMixer(8);
         }
 
         public void Btn1() => state.Btn1();
@@ -64,10 +68,6 @@ namespace C9_Projekt_Mixer
 
 
         // ŚMIETNIK ----------------------------------------
-        public void InitializeMixer(int _channels)
-        {
-            mixer = mixerFactory.InitializeMixer(_channels);
-        }
         public void SignalChain()
         {
             mixer.SignalChain(channel);
@@ -109,26 +109,6 @@ namespace C9_Projekt_Mixer
         {
 
             //return mixer.AddFx(fxFactory.CreateCompressor());
-        }
-        public void AddDeEsser()
-        {
-
-        }
-        public void AddDelay()
-        {
-
-        }
-        public void AddLimiter()
-        {
-
-        }
-        public void AddReverb()
-        {
-
-        }
-        public void RemoveFx()
-        {
-
         }
     }
 }

@@ -26,11 +26,12 @@ namespace C9_Projekt_Mixer
         public string SignalChain(int _chNr)
         {
             // cw
+            Console.Clear();
             if (mute)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
             }
-            Console.Write($"\nChannel {_chNr}");
+            Console.Write($"Channel {_chNr + 1}");
             if (mute)
             {
                 Console.Write(" MUTED");
@@ -50,7 +51,7 @@ namespace C9_Projekt_Mixer
 
             // return
             string answ;
-            answ = $"\nChannel {_chNr}";
+            answ = $"\nChannel {_chNr + 1}";
             if (mute)
             {
                 answ += " MUTED";

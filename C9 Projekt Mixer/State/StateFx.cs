@@ -11,6 +11,7 @@ namespace C9_Projekt_Mixer.State
         public StateFx(App _context) : base(_context) { }
         public override void Btn1() // AddFx
         {
+            context.ChangeState(new StateAddFx(context));
         }
         public override void Btn2() // ClearFx
         {

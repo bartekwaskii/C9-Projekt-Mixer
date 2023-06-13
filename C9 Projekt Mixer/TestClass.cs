@@ -10,6 +10,11 @@ namespace C9_Projekt_Mixer
     {
         public static void Test()
         {
+            var app = App.GetApp();
+            app.Btn1();
+        }
+        public static void OldTest()
+        {
             /*// Input test
             var in1 = new Input(12, true, true, true);
             //Console.WriteLine(in1.Info());
@@ -69,10 +74,6 @@ namespace C9_Projekt_Mixer
             app.ClearEq();
             app.SwitchMute(false);
             app.SignalChain();*/
-
-            var app = App.GetApp();
-            app.Btn1();
-
         }
     }
 }
