@@ -10,21 +10,24 @@ namespace C9_Projekt_Mixer
     {
         private static App app;
         private static AppState state; 
-        private static int channel;
-        public Mixer mixer { get; private set; }
+        private int channel;
+        public  Mixer mixer { get; private set; }
 
         private MixerFactory mixerFactory = new MixerFactory();
         private EqFactory eqFactory = new EqFactory();
         private FxFactory fxFactory = new FxFactory();
 
-        private App() { }
+        private App()
+        {
+            channel = 1;
+            state = new StateStart(this);
+            mixer = mixerFactory.InitializeMixer(8);
+        }
         public static App GetApp()
         {
-            if (App.app == null)
+            if (app == null)
             {
-                App.app = new App();
-                channel = 1;
-                state = new StateStart(App.app);
+                app = new App(); 
             }
             return app;
         }

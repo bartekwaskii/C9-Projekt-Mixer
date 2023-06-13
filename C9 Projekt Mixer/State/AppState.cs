@@ -9,9 +9,9 @@ namespace C9_Projekt_Mixer
     internal abstract class AppState
     {
         protected App context;
-        public AppState(App context)
+        public AppState(App _context)
         {
-            context = context;
+            context = _context;
         }
         public abstract void Btn1();
         public abstract void Btn2();

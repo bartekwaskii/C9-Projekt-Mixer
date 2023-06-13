@@ -11,7 +11,7 @@ namespace C9_Projekt_Mixer
         public StateStart(App _context) : base(_context) { }
         public override void Btn1() // Select channel
         {
-            Console.WriteLine($"Select channel (1-{context.mixer.channelsNumber}"); // null reference
+            Console.WriteLine($"Select channel (1-{context.mixer.channelsNumber})"); // null reference
             int channel = Convert.ToInt16(Console.ReadLine());
             context.SelectChannel(channel);
         }
