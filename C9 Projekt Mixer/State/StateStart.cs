@@ -9,16 +9,17 @@ namespace C9_Projekt_Mixer
     internal class StateStart : AppState
     {
         public StateStart(App _context) : base(_context) { }
-        public override void Btn1()
+        public override void Btn1() // Select channel
         {
         }
-        public override void Btn2()
+        public override void Btn2() // State: Edit
+        {
+            context.ChangeState(new StateEdit(context));
+        }
+        public override void Btn3() // Info/SignalChain
         {
         }
-        public override void Btn3()
-        {
-        }
-        public override void Btn4()
+        public override void Btn4() // uinitialize
         {
         }
         public override void Btn5()

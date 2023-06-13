@@ -27,13 +27,32 @@ namespace C9_Projekt_Mixer
             }
             return app;
         }
+
+        public void ChangeState(AppState _state)
+        {
+            state = _state;
+        }
+
+        public void SelectChannel(int _channelNumber)
+        {
+            channel = _channelNumber - 1; // !!! WAŻNE !!!
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+        // ŚMIETNIK ----------------------------------------
         public void InitializeMixer(int _channels)
         {
             mixer = mixerFactory.InitializeMixer(_channels);
-        }
-        public void SelectChannel(int _channelNumber)
-        {
-            channel = _channelNumber;
         }
         public void SignalChain()
         {

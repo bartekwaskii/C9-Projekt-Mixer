@@ -9,19 +9,19 @@ namespace C9_Projekt_Mixer.State
     internal class StateAddFx : AppState
     {
         public StateAddFx(App _context) : base(_context) { }
-        public override void Btn1()
+        public override void Btn1() // Compressor
         {
         }
-        public override void Btn2()
+        public override void Btn2() // DeEsser
         {
         }
-        public override void Btn3()
+        public override void Btn3() // Delay 
         {
         }
-        public override void Btn4()
+        public override void Btn4() // Limiter
         {
         }
-        public override void Btn5()
+        public override void Btn5() // Reverb
         {
         }
         public override void Btn6()
@@ -33,8 +33,9 @@ namespace C9_Projekt_Mixer.State
         public override void Btn8()
         {
         }
-        public override void Btn9()
+        public override void Btn9() // Exit
         {
+            context.ChangeState(new StateStart(context));
         }
     }
 }

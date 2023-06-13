@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C9_Projekt_Mixer.State;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,22 +10,25 @@ namespace C9_Projekt_Mixer
     internal class StateEdit : AppState
     {
         public StateEdit(App _context) : base(_context) { }
-        public override void Btn1()
+        public override void Btn1() // State: Input
+        {
+            context.ChangeState(new StateInput(context));
+        }
+        public override void Btn2() // State: Eq
+        {
+            context.ChangeState(new StateEq(context));
+        }
+        public override void Btn3() // State : Fx
+        {
+            context.ChangeState(new StateFx(context));
+        }
+        public override void Btn4() // Pan
         {
         }
-        public override void Btn2()
+        public override void Btn5() // Fader
         {
         }
-        public override void Btn3()
-        {
-        }
-        public override void Btn4()
-        {
-        }
-        public override void Btn5()
-        {
-        }
-        public override void Btn6()
+        public override void Btn6() // Mute
         {
         }
         public override void Btn7()
@@ -33,8 +37,9 @@ namespace C9_Projekt_Mixer
         public override void Btn8()
         {
         }
-        public override void Btn9()
+        public override void Btn9() // Exit
         {
+            context.ChangeState(new StateStart(context));
         }
     }
 }

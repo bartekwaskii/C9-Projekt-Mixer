@@ -9,10 +9,10 @@ namespace C9_Projekt_Mixer
     internal class StateEq : AppState
     {
         public StateEq(App _context) : base(_context) { }
-        public override void Btn1()
+        public override void Btn1() // AddEq
         {
         }
-        public override void Btn2()
+        public override void Btn2() // ClearEq
         {
         }
         public override void Btn3()
@@ -33,8 +33,9 @@ namespace C9_Projekt_Mixer
         public override void Btn8()
         {
         }
-        public override void Btn9()
+        public override void Btn9() // Exit
         {
+            context.ChangeState(new StateStart(context));
         }
     }
 
