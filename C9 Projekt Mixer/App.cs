@@ -9,7 +9,7 @@ namespace C9_Projekt_Mixer
     internal class App
     {
         private static App app;
-        private AppState state; 
+        private static AppState state; 
         private static int channel;
         public Mixer mixer { get; private set; }
 
@@ -20,10 +20,11 @@ namespace C9_Projekt_Mixer
         private App() { }
         public static App GetApp()
         {
-            if (app == null)
+            if (App.app == null)
             {
-                app = new App();
+                App.app = new App();
                 channel = 1;
+                state = new StateStart(App.app);
             }
             return app;
         }
@@ -37,7 +38,17 @@ namespace C9_Projekt_Mixer
         {
             channel = _channelNumber - 1; // !!! WAŻNE !!!
         }
-        
+
+        public void Btn1() => state.Btn1();
+        public void Btn2() => state.Btn2();
+        public void Btn3() => state.Btn3();
+        public void Btn4() => state.Btn4();
+        public void Btn5() => state.Btn5();
+        public void Btn6() => state.Btn6();
+        public void Btn7() => state.Btn7();
+        public void Btn8() => state.Btn8();
+        public void Btn9() => state.Btn9();
+
 
 
 

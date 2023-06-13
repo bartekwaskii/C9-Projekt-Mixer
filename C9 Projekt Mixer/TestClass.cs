@@ -70,6 +70,9 @@ namespace C9_Projekt_Mixer
             app.SwitchMute(false);
             app.SignalChain();
 
+            app.InitializeMixer(16);
+            app.Btn1();
+
         }
     }
 }

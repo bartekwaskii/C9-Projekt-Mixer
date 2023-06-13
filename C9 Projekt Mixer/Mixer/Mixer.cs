@@ -8,14 +8,9 @@ namespace C9_Projekt_Mixer
 {
     internal class Mixer
     {
-        private int channelsNumber;
+        public int channelsNumber { get; private set; }
         public List<Channel> channelsList { get; private set; }
 
-        public Mixer(int _channelsNumber)
-        {
-            channelsList = new List<Channel>();
-            channelsNumber = _channelsNumber;
-        }
         public Mixer(int _channesNumber, List<Channel> _chList)
         {
             channelsList = new List<Channel>();
@@ -23,13 +18,29 @@ namespace C9_Projekt_Mixer
             if (_chList.Count <= _channesNumber)
                 channelsList = _chList;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // ŚMIETNIK ---------------------------------
         public string SignalChain(int _channel)
         {
-            return channelsList[_channel - 1].SignalChain(_channel);
+            return channelsList[_channel].SignalChain(_channel);
         }
         public Channel GetChannel(int _channel)
         {
-            return channelsList[_channel - 1];
+            return channelsList[_channel];
         }
         public void Initialize()
         {
@@ -39,40 +50,40 @@ namespace C9_Projekt_Mixer
         // Fader + Mute
         public void SetVolume(int _channel, double _volume)
         {
-            channelsList[_channel - 1].SetVolume(_volume);
+            channelsList[_channel].SetVolume(_volume);
         }
         public void SwitchMute(int _channel, bool _mute)
         {
-            channelsList[_channel - 1].SwitchMute(_mute);
+            channelsList[_channel].SwitchMute(_mute);
         }
         // Input
         public void SwitchPad(int _channel, bool _pad)
         {
-            channelsList[_channel - 1].SwitchPad(_pad);
+            channelsList[_channel].SwitchPad(_pad);
         }
         public void SetGain(int _channel, double _gain)
         {
-            channelsList[_channel - 1].SetGain(_gain);
+            channelsList[_channel].SetGain(_gain);
         }
 
         // Equalizer
         public void AddEq(int _channel, Equalizer _equalizer)
         {
-            channelsList[_channel - 1].AddEq(_equalizer);
+            channelsList[_channel].AddEq(_equalizer);
         }
         public void ClearEq(int _channel)
         {
-            channelsList[_channel - 1].AddEq(null);
+            channelsList[_channel].AddEq(null);
         }
 
         // Effect
         public void AddFx(int _channel, Effect _effect)
         {
-            channelsList[_channel - 1].AddFx(_effect);
+            channelsList[_channel].AddFx(_effect);
         }
         public void ClearFx(int _channel)
         {
-            channelsList[_channel - 1].AddFx(null);
+            channelsList[_channel].AddFx(null);
         }
     }
 }

@@ -10,9 +10,9 @@ namespace C9_Projekt_Mixer
     {
         public Equalizer CreateEq(Mixer _mixer, int _channel, double _f, double _lvl, double _q)
         {
-            if (_mixer.channelsList[_channel-1].equalizer != null)
+            if (_mixer.channelsList[_channel].equalizer != null)
             {
-                return new EqDecorator(_mixer.channelsList[_channel - 1].equalizer, _f, _lvl, _q);
+                return new EqDecorator(_mixer.channelsList[_channel].equalizer, _f, _lvl, _q);
             }
             else
             {
