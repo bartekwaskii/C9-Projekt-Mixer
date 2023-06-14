@@ -21,20 +21,28 @@ namespace C9_Projekt_Mixer
         {
             string answ;
             answ = $"\nInput: \ngain {inputGain}dB";
-            if(pad) { answ += ", pad is on"; }
-            if (lowCut) { answ += ", low cut is on"; }
-            if (highCut) { answ += ", high cut is on"; }
+            if(pad) { answ += ", PAD"; }
+            if (lowCut) { answ += ", Low cut"; }
+            if (highCut) { answ += ", High cut"; }
             return answ;
         }
 
         // Input control
+        public void SetGain(double _gain)
+        {
+            inputGain = _gain;
+        }
         public void SwitchPad(bool _pad)
         {
             pad = _pad;
         }
-        public void SetGain(double _gain)
+        public void SwitchLowCut(bool _lowCut)
         {
-            inputGain = _gain;
+            lowCut = _lowCut;
+        }
+        public void SwitchHighCut(bool _highCut)
+        {
+            highCut = _highCut;
         }
 
 
