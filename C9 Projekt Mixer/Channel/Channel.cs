@@ -10,8 +10,8 @@ namespace C9_Projekt_Mixer
     {
         private bool mute;
         private double fader;
-        private Input input;
-        private Panorama panorama;
+        public Input input { get; private set; }
+        public Panorama panorama { get; private set; }
 
         public Equalizer equalizer { get; private set; }
         public Effect effect { get; private set; }
@@ -46,6 +46,7 @@ namespace C9_Projekt_Mixer
             {
                 Console.WriteLine(effect.Info());
             }
+            Console.WriteLine(panorama.Info());
             Console.WriteLine($"\nOutput: \nfader {fader}dB");
             Console.ForegroundColor = ConsoleColor.Gray;
 

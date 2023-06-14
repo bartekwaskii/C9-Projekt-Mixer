@@ -37,5 +37,9 @@ namespace C9_Projekt_Mixer.State
         {
             context.ChangeState(new StateStart(context));
         }
+        public override void StateInfo()
+        {
+
+        }
     }
 }

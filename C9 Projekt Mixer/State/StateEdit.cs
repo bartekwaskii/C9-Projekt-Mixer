@@ -1,6 +1,7 @@
 ﻿using C9_Projekt_Mixer.State;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,37 @@ namespace C9_Projekt_Mixer
         }
         public override void Btn4() // Pan
         {
+            char s;
+            int l;
+            Console.Clear();
+            Console.WriteLine("Panorama\nSelect side (L/R/C)");
+            char _side = Convert.ToChar(Console.ReadLine());
+            if (_side == 'C')
+            {
+                s = _side;
+                l = 0;
+                context.mixer.channelsList[context.channel].panorama.SetPan(s, l);
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("Panorma set to Center");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Thread.Sleep(1000);
+            }
+            else if(_side == 'L' || _side == 'R')
+            {
+                s = _side;
+                Console.WriteLine("Enter volume (0-100)");
+                int _level = Convert.ToInt32(Console.ReadLine());
+                if (_level >0 && _level <= 100)
+                {
+                    l = _level;
+                    context.mixer.channelsList[context.channel].panorama.SetPan(s, l);
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine($"Panorama set to {s}{l}");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Thread.Sleep(1000);
+                }
+            }
+            StateInfo();
         }
         public override void Btn5() // Fader
         {
@@ -40,6 +72,12 @@ namespace C9_Projekt_Mixer
         public override void Btn9() // Exit
         {
             context.ChangeState(new StateStart(context));
+        }
+        public override void StateInfo()
+        {
+            Console.Clear();
+            Console.WriteLine("Edit tab:");
+            Console.WriteLine("1) Input\n2) Equalizer\n3) Effects\n4) Panorama\n5) Fader\n6) Mute\n9) Exit");
         }
     }
 }

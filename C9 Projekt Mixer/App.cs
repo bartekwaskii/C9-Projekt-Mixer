@@ -41,9 +41,9 @@ namespace C9_Projekt_Mixer
         {
             channel = _channelNumber - 1; // !!! WAŻNE !!!
         }
-        public void Initialize(int _)
+        public void Initialize(int _channelsNumber)
         {
-            mixer = mixerFactory.InitializeMixer(8);
+            mixer = mixerFactory.InitializeMixer(_channelsNumber);
         }
 
         public void Btn1() => state.Btn1();

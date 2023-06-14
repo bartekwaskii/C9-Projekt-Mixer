@@ -12,6 +12,7 @@ namespace C9_Projekt_Mixer
         public AppState(App _context)
         {
             context = _context;
+            StateInfo();
         }
         public abstract void Btn1();
         public abstract void Btn2();
@@ -22,5 +23,6 @@ namespace C9_Projekt_Mixer
         public abstract void Btn7();
         public abstract void Btn8();
         public abstract void Btn9();
+        public abstract void StateInfo();
     }
 }
