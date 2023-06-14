@@ -11,9 +11,32 @@ namespace C9_Projekt_Mixer
         public StateEq(App _context) : base(_context) { }
         public override void Btn1() // AddEq
         {
+            Console.Clear();
+            Console.Write("New equalizer band:\nfrequency: ");
+            double _freq = Convert.ToDouble(Console.ReadLine());
+            Console.Write("level: ");
+            double _lvl = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Q: ");
+            double _q = Convert.ToDouble(Console.ReadLine());
+            if( _freq > 0 && _q > 0 && _q <= 10 ) 
+            {
+                context.mixer.channelsList[context.channel].AddEq(context.eqFactory.
+                    CreateEq(context.mixer, context.channel, _freq, _lvl, _q));
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("Added successfully");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Thread.Sleep(1000);
+            }
+            StateInfo();
         }
         public override void Btn2() // ClearEq
         {
+            context.mixer.channelsList[context.channel].AddEq(null);
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Equalizer is cleared");
+            Console.ForegroundColor= ConsoleColor.Gray;
+            Thread.Sleep(1000);
+            StateInfo();
         }
         public override void Btn3()
         {
@@ -39,7 +62,8 @@ namespace C9_Projekt_Mixer
         }
         public override void StateInfo()
         {
-
+            Console.Clear();
+            Console.WriteLine("Equalizer tab:\n1) Add band\n2) Clear equalizer\n9) Exit");
         }
     }
 

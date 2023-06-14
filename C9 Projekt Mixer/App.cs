@@ -14,13 +14,15 @@ namespace C9_Projekt_Mixer
         public  Mixer mixer { get; private set; }
 
         private MixerFactory mixerFactory = new MixerFactory();
-        private EqFactory eqFactory = new EqFactory();
-        private FxFactory fxFactory = new FxFactory();
+        public EqFactory eqFactory { get; private set; }
+        public FxFactory fxFactory { get; private set; }
 
         private App()
         {
             channel = 0;
             state = new StateStart(this);
+            eqFactory = new EqFactory();
+            fxFactory = new FxFactory();
             mixer = mixerFactory.InitializeMixer(8);
         }
         public static App GetApp()
