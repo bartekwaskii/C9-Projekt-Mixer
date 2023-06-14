@@ -59,9 +59,38 @@ namespace C9_Projekt_Mixer
         }
         public override void Btn5() // Fader
         {
+            Console.Clear();
+            Console.WriteLine("Fader:\nEnter volume");
+            double _vol = Convert.ToDouble(Console.ReadLine());
+            context.mixer.channelsList[context.channel].SetVolume(_vol);
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"Fader set to {_vol}dB");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Thread.Sleep(1000);
+            StateInfo();
+
         }
         public override void Btn6() // Mute
         {
+            Console.Clear();
+            Console.WriteLine("Mute:\n1) Mute channel\n2) Unmute channel");
+            int _mute = Convert.ToInt16(Console.ReadLine());
+            if(_mute == 1)
+            {
+                context.mixer.channelsList[context.channel].SwitchMute(true);
+                Console.ForegroundColor= ConsoleColor.Red;
+                Console.WriteLine($"channel {context.channel + 1} muted");
+                Thread.Sleep(1000);
+            }
+            else if(_mute == 2)
+            {
+                context.mixer.channelsList[context.channel].SwitchMute(false);
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine($"channel {context.channel + 1} unmuted");
+                Thread.Sleep(1000);
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
+            StateInfo();
         }
         public override void Btn7()
         {
