@@ -11,7 +11,18 @@ namespace C9_Projekt_Mixer.State
         public StateInput(App _context) : base(_context) { }
         public override void Btn1() // Gain
         {
-
+            Console.Clear();
+            Console.WriteLine("Gain:\nEnter level");
+            double _gain = Convert.ToDouble(Console.ReadLine());
+            if(_gain >= 0 )
+            {
+                context.mixer.channelsList[context.channel].input.SetGain(_gain);
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine($"Fader set to {_gain}dB");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Thread.Sleep(1000);
+            }
+            StateInfo();
         }
         public override void Btn2() // PAD
         {
