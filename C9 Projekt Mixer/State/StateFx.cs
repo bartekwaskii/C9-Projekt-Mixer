@@ -40,7 +40,8 @@ namespace C9_Projekt_Mixer.State
         }
         public override void StateInfo()
         {
-
+            Console.Clear();
+            Console.WriteLine("Effect tab:\n1) Add effect\n2) Clear effect");
         }
     }
 }

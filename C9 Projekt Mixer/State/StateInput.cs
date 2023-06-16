@@ -18,7 +18,7 @@ namespace C9_Projekt_Mixer.State
             {
                 context.mixer.channelsList[context.channel].input.SetGain(_gain);
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine($"Fader set to {_gain}dB");
+                Console.WriteLine($"Gain set to {_gain}dB");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Thread.Sleep(1000);
             }

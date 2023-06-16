@@ -66,12 +66,13 @@ namespace C9_Projekt_Mixer
         }
         public override void Btn9()
         {
+            Environment.Exit(0);
         }
         public override void StateInfo()
         {
             Console.Clear();
             Console.WriteLine("Start tab:");
-            Console.WriteLine("1) Select channel\n2) Edit channel\n3) Signal chain\n4) Initialize mixer");
+            Console.WriteLine("1) Select channel\n2) Edit channel\n3) Signal chain\n4) Initialize mixer\n9) Exit program");
         }
     }
 }

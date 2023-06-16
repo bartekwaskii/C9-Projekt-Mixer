@@ -10,7 +10,7 @@ namespace C9_Projekt_Mixer
     {
         private double time;
 
-        public ReverbDecorator(Fx _fx, int _mix, double _time) : base(_fx, _mix)
+        public ReverbDecorator(Effect _fx, int _mix, double _time) : base(_fx, _mix)
         {
             time = _time;
         }
